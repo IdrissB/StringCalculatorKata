@@ -1,4 +1,5 @@
-﻿using NFluent;
+﻿using System;
+using NFluent;
 using NUnit.Framework;
 
 namespace SolidExercices.Tests
@@ -51,6 +52,13 @@ namespace SolidExercices.Tests
             var calculator = new Calculator(new CalculOperations());
             var result = calculator.Calculate("0/1,2");
             Check.That(result).IsEqualTo(0);
+        }
+
+        [Test]
+        public void ThrowAnExceptionWhenIncorrectOp()
+        {
+            var calculator = new Calculator(new CalculOperations());
+            Assert.Throws<ArgumentOutOfRangeException>(() => calculator.Calculate(""));
         }
     }
 }

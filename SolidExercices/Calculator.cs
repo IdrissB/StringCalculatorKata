@@ -43,6 +43,7 @@ namespace SolidExercices
                             }
                         }
                     }
+                    throw new ArgumentOutOfRangeException();
 
                 }
                 return result;

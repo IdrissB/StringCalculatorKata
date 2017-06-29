@@ -19,9 +19,9 @@ Réponses aux questions posées
 
 Q1) Pour éviter les switchs et ifs on peut utiliser un dictionnaire qui prendra en paramètre un char pour l'opérateur et une fonction pour faire appel à l'opération.
 
-Q2)
+Q2) 
 
-Q3)
+Q3) On utilse l'inversion de dépendance.
 
 Q4)
 
