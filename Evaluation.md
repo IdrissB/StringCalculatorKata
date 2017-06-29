@@ -17,7 +17,7 @@ A LA FIN DU TP: pensez à pousser vos commits sur votre compte GitHub et envoyer 
 Réponses aux questions posées
 -----------------------------
 
-Q1)
+Q1) Pour éviter les switchs et ifs on peut utiliser un dictionnaire.
 
 Q2)
 

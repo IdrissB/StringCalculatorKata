@@ -36,5 +36,21 @@ namespace SolidExercices.Tests
             var result = calculator.Calculate("15/3");
             Check.That(result).IsEqualTo(5m);
         }
+
+        [Test]
+        public void CalculateAProductWithAZero()
+        {
+            var calculator = new Calculator();
+            var result = calculator.Calculate("0x1,2");
+            Check.That(result).IsEqualTo(0);
+        }
+
+        [Test]
+        public void CalculateADivisionWithAZero()
+        {
+            var calculator = new Calculator();
+            var result = calculator.Calculate("0/1,2");
+            Check.That(result).IsEqualTo(0);
+        }
     }
 }
