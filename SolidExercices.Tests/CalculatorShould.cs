@@ -54,11 +54,19 @@ namespace SolidExercices.Tests
             Check.That(result).IsEqualTo(0);
         }
 
-        //[Test]
-        //public void ThrowAnExceptionWhenIncorrectOp()
-        //{
-        //    var calculator = new Calculator(new CalculOperations());
-        //    Assert.Throws<ArgumentOutOfRangeException>(() => calculator.Calculate(""));
-        //}
+        [Test]
+        public void CalculateASumWithMoreThanTwoOperand()
+        {
+            var calculator = new Calculator(new CalculOperations());
+            var result = calculator.Calculate("8+2+10+6,5");
+            Check.That(result).IsEqualTo(26.5m);
+        }
+
+        [Test]
+        public void ThrowAnExceptionWhenEmptyOperation()
+        {
+            var calculator = new Calculator(new CalculOperations());
+            Assert.Throws<ArgumentOutOfRangeException>(() => calculator.Calculate(""));
+        }
     }
 }
