@@ -25,7 +25,7 @@ Q3) On utilse l'inversion de dépendance ainsi que le principe d'encapsulation de
 
 Q4) Dans le calculTrainer les données sont saisies en dur au lieu d'être saisie par l'utilisateur. Le domaine et la présentation ne sont pas séparés.
 
-Q5) On sépare la vue de la couche métier de la couche donnée. Chaque groupe est indépendant. Cela facilite la maintenabilité du code.
+Q5) On sépare la vue de la couche métier et de la couche donnée. Chaque groupe est indépendant. Cela facilite la maintenabilité du code.
 
 Q6) On utilise aussi l'inversion de dépendance, en isolant les opérations écrites en dur dans une classe. Cette classe n'a pas besoin de savoir les opérations que l'on veut effectuer mais seulement appliquer ce qu'on lui donne.
  
