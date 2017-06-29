@@ -9,7 +9,7 @@ namespace SolidExercices
 
         public void Run()
         {
-            var calculator = new Calculator();
+            var calculator = new Calculator(new CalculOperations());
             foreach (var operation in _operations)
             {
                 try
@@ -22,6 +22,8 @@ namespace SolidExercices
                     Console.WriteLine("ERROR: " + e.Message);
                 }
             }
+
+            Console.ReadKey();
         }
     }
 }

@@ -45,8 +45,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calculator.cs" />
+    <Compile Include="CalculatorTrainer.cs" />
     <Compile Include="CalculOperations.cs" />
-    <Compile Include="ICalculate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

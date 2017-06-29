@@ -23,7 +23,14 @@ namespace SolidExercices
 
         private decimal Division(decimal arg1, decimal arg2)
         {
-            return arg1 / arg2;
+            try
+            {
+                return arg1 / arg2;
+            }
+            catch (DivideByZeroException e)
+            {
+                throw new ArgumentException("On ne peut diviser par ZERO!");
+            }
         }
 
         private decimal Product(decimal arg1, decimal arg2)
