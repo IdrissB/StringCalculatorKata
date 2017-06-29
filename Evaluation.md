@@ -19,13 +19,13 @@ Réponses aux questions posées
 
 Q1) Pour éviter les switchs et ifs on peut utiliser un dictionnaire qui prendra en paramètre un char pour l'opérateur et une fonction pour faire appel à l'opération.
 
-Q2) On utilise le principe SRP (Single Responsability Principe)
+Q2) On utilise le principe SRP (Single Responsability Principal)
 
 Q3) On utilse l'inversion de dépendance ainsi que le principe d'encapsulation des données : une classe n'a accès uniquement aux données dont elle a strictement besoin.
 
 Q4) Dans le calculTrainer les données sont saisies en dur au lieu d'être saisie par l'utilisateur. Le domaine et la présentation ne sont pas séparés.
 
-Q5)
+Q5) On sépare la vue de la couche métier de la couche donnée. Chaque groupe est indépendant. Cela facilite la maintenabilité du code.
 
-Q6)
+Q6) On utilise aussi l'inversion de dépendance, en isolant les opérations écrites en dur dans une classe. Cette classe n'a pas besoin de savoir les opérations que l'on veut effectuer mais seulement appliquer ce qu'on lui donne.
  

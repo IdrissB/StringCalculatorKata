@@ -4,7 +4,12 @@ namespace SolidExercices
 {
     public class CalculatorTrainer
     {
-        private readonly OperationsGenerator _operations = new OperationsGenerator();
+        private readonly IOperationsRepository _operations;
+
+        public CalculatorTrainer(IOperationsRepository operations)
+        {
+            _operations = operations;
+        }
 
         public void Run()
         {
