@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SolidExercices
 {
@@ -27,7 +24,7 @@ namespace SolidExercices
             {
                 return arg1 / arg2;
             }
-            catch (DivideByZeroException e)
+            catch (DivideByZeroException)
             {
                 throw new ArgumentException("On ne peut diviser par ZERO!");
             }
