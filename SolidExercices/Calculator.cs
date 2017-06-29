@@ -1,30 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text.RegularExpressions;
 
 namespace SolidExercices
 {
     public class Calculator
     {
+        private readonly CalculOperations _calculOperations;
+
+        public Calculator(CalculOperations calculOpe)
+        {
+            _calculOperations = calculOpe;
+        }
+
         public decimal Calculate(string operation)
         {
             decimal result = 0;
-            CalculOperations calcul = new CalculOperations(operation);
-
-            var operators = new Dictionary<char, Func<decimal, decimal, decimal>>()
-            {
-                {'+', Sum},
-                {'-', Sub},
-                {'x', Product},
-                {'/', Division}
-            };
 
             try
             {
                 if (operation != " " && operation != "0")
                 {
-                    foreach (var v in operators)
+                    foreach (var v in _calculOperations.Operators)
                     {
                         if (operation.Contains(v.Key))
                         {
@@ -54,26 +53,6 @@ namespace SolidExercices
                 throw;
             }
             
-        }
-
-        private decimal Division(decimal arg1, decimal arg2)
-        {
-           return arg1 / arg2;
-        }
-
-        private decimal Product(decimal arg1, decimal arg2)
-        {
-            return arg1 * arg2;
-        }
-
-        private decimal Sub(decimal arg1, decimal arg2)
-        {
-            return arg1 - arg2;
-        }
-
-        private decimal Sum(decimal arg1, decimal arg2)
-        {
-            return arg1 + arg2;
         }
     }
 }

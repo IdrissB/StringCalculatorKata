@@ -17,7 +17,7 @@ A LA FIN DU TP: pensez à pousser vos commits sur votre compte GitHub et envoyer 
 Réponses aux questions posées
 -----------------------------
 
-Q1) Pour éviter les switchs et ifs on peut utiliser un dictionnaire.
+Q1) Pour éviter les switchs et ifs on peut utiliser un dictionnaire qui prendra en paramètre un char pour l'opérateur et une fonction pour faire appel à l'opération.
 
 Q2)
 

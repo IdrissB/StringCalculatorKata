@@ -8,19 +8,37 @@ namespace SolidExercices
 {
     public class CalculOperations
     {
-        private readonly List<String> _operators = new List<String>();
+        public Dictionary<char, Func<decimal, decimal, decimal>> Operators { get; private set; }
 
         public CalculOperations()
         {
-            _operators.Add("+");
-            _operators.Add("-");
-            _operators.Add("/");
-            _operators.Add("x");
+            Operators = new Dictionary<char, Func<decimal, decimal, decimal>>()
+            {
+                {'+', Sum},
+                {'-', Sub},
+                {'x', Product},
+                {'/', Division}
+            };
         }
 
-        public List<string> Operators
+        private decimal Division(decimal arg1, decimal arg2)
         {
-            get { return _operators; }
+            return arg1 / arg2;
+        }
+
+        private decimal Product(decimal arg1, decimal arg2)
+        {
+            return arg1 * arg2;
+        }
+
+        private decimal Sub(decimal arg1, decimal arg2)
+        {
+            return arg1 - arg2;
+        }
+
+        private decimal Sum(decimal arg1, decimal arg2)
+        {
+            return arg1 + arg2;
         }
     }
 }
