@@ -10,35 +10,39 @@ namespace SolidExercices
         public decimal Calculate(string operation)
         {
             decimal result = 0;
+            CalculOperations calcul = new CalculOperations(operation);
+
+            var operators = new Dictionary<char, Func<decimal, decimal, decimal>>()
+            {
+                {'+', Sum},
+                {'-', Sub},
+                {'x', Product},
+                {'/', Division}
+            };
+
             try
             {
                 if (operation != " " && operation != "0")
                 {
-                    if (operation.Contains("+"))
+                    foreach (var v in operators)
                     {
-                        string[] values = operation.Split('+');
-                        result = Convert.ToDecimal(values[0]) + Convert.ToDecimal(values[1]);
-                    }
-                    else if (operation.Contains("-"))
-                    {
-                        string[] values = operation.Split('-');
-                        result = Convert.ToDecimal(values[0]) - Convert.ToDecimal(values[1]);
-                    }
-                    else if (operation.Contains("x"))
-                    {
-                        string[] values = operation.Split('x');
-                        if (values[0] == "0" || values[1] == "0")
-                            result = 0;
-                        else
-                            result = Convert.ToDecimal(values[0]) * Convert.ToDecimal(values[1]);
-                    }
-                    else if (operation.Contains("/"))
-                    {
-                        string[] values = operation.Split('/');
-                        if (values[0] == "0" || values[1] == "0")
-                            result = 0;
-                        else
-                            result = Convert.ToDecimal(values[0]) / Convert.ToDecimal(values[1]);
+                        if (operation.Contains(v.Key))
+                        {
+                            String[] ope = operation.Split(v.Key);
+                            bool elementFound = true;
+                            foreach (string s in ope)
+                            {
+                                if (elementFound)
+                                {
+                                    result = decimal.Parse(s);
+                                    elementFound = false;
+                                }
+                                else
+                                {
+                                    result = v.Value(result, decimal.Parse(s));
+                                }
+                            }
+                        }
                     }
 
                 }
@@ -50,6 +54,26 @@ namespace SolidExercices
                 throw;
             }
             
+        }
+
+        private decimal Division(decimal arg1, decimal arg2)
+        {
+           return arg1 / arg2;
+        }
+
+        private decimal Product(decimal arg1, decimal arg2)
+        {
+            return arg1 * arg2;
+        }
+
+        private decimal Sub(decimal arg1, decimal arg2)
+        {
+            return arg1 - arg2;
+        }
+
+        private decimal Sum(decimal arg1, decimal arg2)
+        {
+            return arg1 + arg2;
         }
     }
 }
